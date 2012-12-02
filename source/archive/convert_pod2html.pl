@@ -3,6 +3,7 @@ use warnings;
 use File::Slurp;
 use Pod::HtmlEasy;
 use File::Find::Rule;
+use Encode 'encode_utf8';
 
 #####################
 #
@@ -83,7 +84,7 @@ foreach my $file (@files) {
     $html .= $podhtml->pod2html( $file, %pod_opts );
 
     # Remove =encoding statement
-    $html =~ s/<pre>=encoding utf-?8<\/pre>//;
+    my $utf = $html =~ s/<pre>=encoding utf-?8<\/pre>//;
 
-    write_file( $html_file, $html );
+    write_file( $html_file, $utf ? $html : encode_utf8 $html );
 }
