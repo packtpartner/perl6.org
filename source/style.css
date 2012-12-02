@@ -50,3 +50,18 @@ pre, code {
     border-top: 1px solid #DFD;
     border-bottom: 1px solid #DFD;
 }
+/* Syntax highlighting */
+.synSpecial {
+    color: blue;
+    font-weight: bold;
+}
+.synIdentifier {
+    color: green;
+}
+.synConstant {
+    color: blue;
+}
+.synComment {
+    color: gray;
+    font-style: italic;
+}
