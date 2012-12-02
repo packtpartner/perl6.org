@@ -1,8 +1,8 @@
 [% setvar title = "Perl6 Architecture" %]
 
-<h3>This file is part of the Archive</h3>
-<p>To see what is currently happening visit <a href="http://www.perl6.org/">http://www.perl6.org/</a></p>
+<p class=warning>This file is part of the Archive.</p>
 
+<h1>Perl 6 Architecture</h1>
 
 <h2>
 Quick Summary</h2>
@@ -16,35 +16,32 @@ or
 <br>.NET bytecode, or an Alpha executable, or an encoded DNA sequence for
 <br>fruitflies or something)
 <p>Or, in glorious ASCII art form (data flows from top to bottom):
-<table BORDER >
-<tr>
-<td>
-<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Source Code</pre>
 
-<pre>&nbsp;&nbsp;&nbsp; +------------+
-&nbsp;&nbsp;&nbsp; | The Parser |
-&nbsp;&nbsp;&nbsp; +------------+</pre>
+<pre>
+      Source Code
 
-<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Syntax Tree</pre>
+    +------------+
+    | The Parser |
+    +------------+
 
-<pre>&nbsp;&nbsp;&nbsp; +--------------+
-&nbsp;&nbsp;&nbsp; | The Compiler |
-&nbsp;&nbsp;&nbsp; +--------------+
+      Syntax Tree
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Byte Code</pre>
+    +--------------+
+    | The Compiler |
+    +--------------+
 
-<pre>&nbsp; +--------------------+&nbsp;&nbsp;
-&nbsp; | Bytecode Optimizer |&nbsp;&nbsp;
-&nbsp; +--------------------+&nbsp;&nbsp;</pre>
+       Byte Code
 
-<pre>&nbsp;&nbsp;&nbsp; Better Byte Code</pre>
+  +--------------------+  
+  | Bytecode Optimizer |  
+  +--------------------+  
 
-<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +---------+
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Runtime |
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +---------+</pre>
-</td>
-</tr>
-</table>
+    Better Byte Code
+
+      +---------+
+      | Runtime |
+      +---------+
+</pre>
 
 <h2>
 The Plans</h2>

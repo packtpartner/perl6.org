@@ -134,7 +134,7 @@ specify a centred field to be filled by a subsequent value.</p>
 <p>A numerically formatted field with the specified number of digits to
 either side of the decimal place. See <a href="#numerical_formatting">Numerical formatting</a> below.</p>
 </dd>
-<dt><strong><a name="________" class="item">[[[[[[[[</a></strong></dt>
+<dt><strong><a name="________" class="item">[[<!---->[[<!---->[[<!---->[[<!----></a></strong></dt>
 
 <dd>
 <p>Left-justified block field indicator.
@@ -155,7 +155,7 @@ lines. See below.</p>
 Just like a ^^^^^^^^ field, except it repeats as required on subsequent
 lines. See below.</p>
 </dd>
-<dt><strong><a name="________" class="item">]]].[[[[</a></strong></dt>
+<dt><strong><a name="________" class="item">]]].[[<!---->[[<!----></a></strong></dt>
 
 <dd>
 <p>A numerically formatted block field with the specified number of digits to
@@ -174,7 +174,7 @@ data value. Repeats on subsequent lines as required.</p>
 <dd>
 <p>A zero-width field separator. A null character in the template field is
 ignored (i.e. <em>not</em> included in the formatted text). This allows two
-fields to be adjacent. For example: &quot;[[[[[[[[[[[\0[[[[[[[[[[[&quot;. To put a
+fields to be adjacent. For example: &quot;[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[\0[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[&quot;. To put a
 literal &quot;\0&quot; in a formatted text, use a '~' field and pass it the
 data string &quot;\0&quot;.</p>
 </dd>
@@ -192,7 +192,7 @@ not a one character wide field).</p>
 </dl>
 <p>Hence a typical use of <code>format</code> might look like this:</p>
 <pre>
-        $formatted = format &quot;&lt;[[[[[[[[[[[[[[[[&gt;    &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&quot;,
+        $formatted = format &quot;&lt;[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->&gt;    &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&quot;,
                                $aphorism,          &quot;page $page_num&quot;;</pre>
 <p>and might produce an output like this:</p>
 <pre>
@@ -217,7 +217,7 @@ lines are replaced by the appropriate number of spaces.</p>
         $text1 = &quot;How many times have you longed to smash...&quot;;
         $text2 = &quot;...the bedevilment that is spam?&quot;;</pre>
 <pre>
-        print format &quot;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;   [[[[[[[[[[[[[[[   [[[[[[[[[[&quot;,
+        print format &quot;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;   [[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[   [[<!---->[[<!---->[[<!---->[[<!---->[[<!---->&quot;,
                       $title,       $text1,           $text2;</pre>
 <pre>
         # prints:
@@ -304,7 +304,7 @@ replaced with a single space.</p>
 <p>The &quot;fill&quot; option independently causes newlines to be &quot;squeezed&quot;.</p>
 <p>Hence:</p>
 <pre>
-        $frmt = &quot;# [[[[[[[[[[[[[[[[[[[[[&quot;;
+        $frmt = &quot;# [[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[&quot;;
         $data = &quot;h  e\t \tl lo\nworld\t\t\t\t\t&quot;;</pre>
 <pre>
         print format $frmt, $data;
@@ -327,10 +327,10 @@ true value, every line returned by <code>format</code> will automatically have t
 substitution <code>s/[ \t]+$//gm</code> applied to it.</p>
 <p>Hence:</p>
 <pre>
-        print length format &quot;[[[[[[[[[[&quot;, &quot;short&quot;;
+        print length format &quot;[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->&quot;, &quot;short&quot;;
         # 11</pre>
 <pre>
-        print length format {trim=&gt;1}, &quot;[[[[[[[[[[&quot;, &quot;short&quot;;
+        print length format {trim=&gt;1}, &quot;[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->&quot;, &quot;short&quot;;
         # 6</pre>
 <p>
 </p>
@@ -343,13 +343,13 @@ $intro and $commentary:</p>
 <pre>
         print format
                 { squeeze=&gt;1, fill=&gt;1, break=&gt;Format::break_TeX },
-                '[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]',
+                '[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[]]]]]]]]]]]]]]]]]]]]]]]]]]',
                 $intro,
                 { squeeze=&gt;0, fill=&gt;0, break=&gt;undef },
-                '     &gt; [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[',
+                '     &gt; [[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->',
                 $quote,
                 { squeeze=&gt;1, fill=&gt;1, break=&gt;Format::break_TeX },
-                '[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]',
+                '[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[]]]]]]]]]]]]]]]]]]]]]]]]]]',
                 $commentary;</pre>
 <p>or, more cleanly:</p>
 <pre>
@@ -357,11 +357,11 @@ $intro and $commentary:</p>
         $RAW  = { squeeze=&gt;0, fill=&gt;0, break=&gt;undef };</pre>
 <pre>
         print format
-                $TIDY, '[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]',
+                $TIDY, '[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[]]]]]]]]]]]]]]]]]]]]]]]]]]',
                         $intro,
-                $RAW,  '     &gt; [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[',
+                $RAW,  '     &gt; [[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->',
                                $quote;
-                $TIDY, '[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]',
+                $TIDY, '[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[]]]]]]]]]]]]]]]]]]]]]]]]]]',
                         $commentary;</pre>
 <p>Note that -- in <code>Text::Autoformat::form</code> -- changes in options cannot
 currently be made <em>between</em> interpolated data arguments (i.e. they
@@ -373,7 +373,7 @@ example, to create two columns where the left column is (only) filled and
 the right is (only) squeezed:</p>
 <pre>
         print format
-                '[[[[[[[[[[[[[[[[[[[    [[[[[[[[[[[[[[[[[[[',
+                '[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[    [[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[',
                 { squeeze=&gt;0, fill=&gt;1 }, $column1_text,
                 { squeeze=&gt;1, fill=&gt;0 }, $column2_text;</pre>
 <p>
@@ -432,7 +432,7 @@ its final value will be unchanged.</p>
 <p>
 </p>
 <h3><a name="numerical_formatting">Numerical formatting</a></h3>
-<p>The &quot;&gt;&gt;&gt;.&lt;&lt;&lt;&quot; and &quot;]]].[[[&quot; field specifiers may be used to format
+<p>The &quot;&gt;&gt;&gt;.&lt;&lt;&lt;&quot; and &quot;]]].[[<!---->[&quot; field specifiers may be used to format
 numeric values about a fixed decimal place marker. For example:</p>
 <pre>
         print format '(&gt;&gt;&gt;&gt;&gt;.&lt;&lt;)', &lt;&lt;EONUMS;
@@ -518,7 +518,7 @@ in which case, any invalid numeric data is simply ignored. For example:</p>
 interpolation. This option would also imply 'AllPlaces'. For example:</p>
 <pre>
         print format {numeric=&gt;'Currency'},
-                     ']]]]].[[',
+                     ']]]]].[[<!---->',
                      [1,100,1000,10000];</pre>
 <pre>
         #    $1.00
@@ -533,10 +533,10 @@ interpolation. This option would also imply 'AllPlaces'. For example:</p>
 For example:</p>
 <pre>
         print format {numeric=&gt;'Fill(*)'},
-                     ']]]]].[[[[',
+                     ']]]]].[[<!---->[[<!---->',
                      [1,10.01,100.001,1000.0001,10000.00001],
                      {numeric=&gt;'Fill(+)'},
-                     ']]]]].[[[[',
+                     ']]]]].[[<!---->[[<!---->',
                      [10,100,10000];</pre>
 <pre>
         # ****1.0***
@@ -558,7 +558,7 @@ string, separating each element with a newline character. As a result, a
 call like this:</p>
 <pre>
         @values = qw( 1 10 100 1000 );
-        print format &quot;(]]]].[[)&quot;, \@values;</pre>
+        print format &quot;(]]]].[[<!---->)&quot;, \@values;</pre>
 <p>will print out</p>
 <pre>
          (   1.00)
@@ -572,7 +572,7 @@ scalars passed by reference.</p>
 <p>To avoid having an array consumed by <code>format</code>, pass it as an anonymous
 array:</p>
 <pre>
-        print format &quot;(]]]].[[)&quot;, [@values];</pre>
+        print format &quot;(]]]].[[<!---->)&quot;, [@values];</pre>
 <p>
 </p>
 <h3><a name="headers__footers__and_pages">Headers, footers, and pages</a></h3>
@@ -675,7 +675,7 @@ within a particular subroutine like so:</p>
                 ----------------
                 ^^^^  ]]]]]]]]]]\|
                                 =
-                ]]].[[[
+                ]]].[[<!---->[
                 
         }, $count, $text, $count+11, $text, &quot;123 123.4\n123.456789&quot;;</pre>
 <p>produces the following output:</p>
@@ -702,7 +702,7 @@ For example:</p>
                 ''
                 'Age    Sex     Description',
                 '===    ===     =====================',
-                '^^^    ^^^     [[[[[[[[[[[]]]]]]]]]]',
+                '^^^    ^^^     [[<!---->[[<!---->[[<!---->[[<!---->[[<!---->[]]]]]]]]]]',
                  $age,  $sex,   $description;</pre>
 <p>
 </p>

@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<!-- Hacking: see NOTES and TODO in this directory -->
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-    <title>[% readvar title %]</title>
-    [% ifvar more_header %] [% readvar more_header %] [%endifvar%]
-    <link rel="icon" href="/favicon.ico" type="favicon.ico" />
-    <style type="text/css">
-        @import url("/style.css");
-        [% ifvar sitecss %][% readvar sitecsss %][% endifvar %]
-    </style>
-</head>
-<body>
-<div id="wrapper-outer">
+<!doctype html>
+<meta charset=utf-8>
+<title>[% readvar title %]</title>
+<link rel=stylesheet href='/style.css'>
+<div class=menu>
+<ul>
+<li class=camelia><a href='/'><img src='/camelia2.png' alt='Main page'></a>
+<li><a href='/community'>Community</a>
+<li><a href='/specification'>Specification</a>
+<li><a href='/compilers'>Compilers</a>
+<li><a href='/documentation'>Documentation</a>
+<li><a href='/fun'>Fun</a>
+<li><a href='/whatever'>Whatever</a>
+<li><a href='http://rakudo.org/how-to-get-rakudo'>Download Perl 6</a>
+</ul>
+<p>If you want to contribute to this page,
+   <a href="/about/">look here for instructions</a>.</p>
+</div>

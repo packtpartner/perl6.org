@@ -1,36 +1,26 @@
-[% setvar title STD and viv -- Perl 6 standard grammar %]
+[% setvar title STD and viv - Perl 6 standard grammar %]
 
-[% menu nav compilers %]
+<h1>STD and viv</h1>
 
-<div id="subpage-header">
-    [% include camelia %]
+<p>Perl&nbsp;6 has a grammar that can be tweaked by the user. Hence the
+structure of the grammar must be the same in all Perl 6 compilers. This
+structure is given STD.pm6, the standard grammar. It is both specification
+and runnable code.</p>
 
-    <h2>STD and viv</h2>
+<h2>STD</h2>
+<p>The Perl 6 standard grammar is written in Perl 6, and specifies how a
+Perl 6 program is parsed.</p>
+<p>The source code can be found on <a
+href="http://github.com/perl6/std/">github in the perl6/std project</a>
+in the file <a
+    href="https://github.com/perl6/std/blob/master/STD.pm6">STD.pm6</a>.</p>
 
-    <p>Perl&nbsp;6 has a grammar that can be tweaked by the user. Hence the
-    structure of the grammar must be the same in all Perl 6 compilers. This
-    structure is given STD.pm6, the standard grammar. It is both specification
-    and runnable code.</p>
-</div>
+<p>Both STD.pm and viv are included in the <a
+href="http://search.cpan.org/dist/STD/">STD</a> package on CPAN.</p>
 
-<div id="col1">
-    <h3>STD</h3>
-    <p>The Perl 6 standard grammar is written in Perl 6, and specifies how a
-    Perl 6 program is parsed.</p>
-    <p>The source code can be found on <a
-    href="http://github.com/perl6/std/">github in the perl6/std project</a>
-    in the file <a
-        href="https://github.com/perl6/std/blob/master/STD.pm6">STD.pm6</a>.</p>
-
-    <p>Both STD.pm and viv are included in the <a
-    href="http://search.cpan.org/dist/STD/">STD</a> package on CPAN.</p>
-</div>
-
-<div id="col2">
-    <h3>viv</h3>
-    <p><em>viv</em> should be read as <em>VI ➔ V</em>, where V and I are Roman
-    numerals. So it's a translator from Perl 6 to Perl 5, expressly designed
-    to run STD.pm6 - it compiles to Perl 5 code only features that are needed
-    to run STD.pm6. However it can be used by other compilers as a base to
-    produce code for other backends.</p>
-</div>
+<h2>viv</h2>
+<p><em>viv</em> should be read as <em>VI ➔ V</em>, where V and I are Roman
+numerals. So it's a translator from Perl 6 to Perl 5, expressly designed
+to run STD.pm6 - it compiles to Perl 5 code only features that are needed
+to run STD.pm6. However it can be used by other compilers as a base to
+produce code for other backends.</p>

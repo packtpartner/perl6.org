@@ -45,6 +45,7 @@ foreach my $file (@files) {
 
         # Hack to get title from POD
         my $pod = read_file($file);
+        
         if ( $pod =~ /=head1 TITLE/i || $pod =~ /=head1 NAME/i ) {
 
             $pod =~ s/[\r\n]//g;
@@ -69,18 +70,20 @@ foreach my $file (@files) {
             }
         }
 
+        $title ||= 'Perl 6';
         # cleanup
         $title =~ s/^\s+//;
         $title =~ s/\s+$//;
-        $title ||= 'Unknown';
         warn "Title: $title";
     }
 
     my $html = "[% setvar title $title %]\n";
-    $html .= '<h3>This file is part of the Perl 6 Archive</h3>
-    <p>To see what is currently happening visit <a href="http://www.perl6.org/">http://www.perl6.org/</a></p>
-';
+    $html .= "<p class=warning>This page is part of the Archive.</p>";
+
     $html .= $podhtml->pod2html( $file, %pod_opts );
+
+    # Remove =encoding statement
+    $html =~ s/<pre>=encoding utf-?8<\/pre>//;
 
     write_file( $html_file, $html );
 }
