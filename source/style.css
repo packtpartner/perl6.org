@@ -42,7 +42,11 @@ h3 {
     border-radius: 4px;
 }
 pre {
-    background: #F8FFF8;
     padding: 4px;
     border-radius: 4px;
+}
+pre, code {
+    background: #F8FFF8;
+    border-top: 1px solid #DFD;
+    border-bottom: 1px solid #DFD;
 }
